@@ -4,7 +4,7 @@ import feedparser
 mcp = FastMCP(name="FreeCodeCamp Feed Searcher")
 
 @mcp.tool()
-def fcc_news_search(query:str, max_results:int = 3):
+def fcc_news_search(query:str, max_results:int = 4):
     """Search FreeCodeCamp news feed via RSS by title/description"""
     feed = feedparser.parse("https://www.freecodecamp.org/news/rss")
     results = []
@@ -20,7 +20,7 @@ def fcc_news_search(query:str, max_results:int = 3):
     return results or [{"message":"No results found"}]
 
 @mcp.tool()
-def fcc_youtube_search(query:str, max_results:int=3):
+def fcc_youtube_search(query:str, max_results:int=4):
     """Search FreeCodeCamp Youtube channel via RSS by title"""
     feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ")
     results = []
